@@ -2,6 +2,16 @@
 # tp2
 
 
+print('hello world!')
+
+x = input('entrez votre nom: ')
+print('hello, ' + x)
+
+nombre = int(input('combiende rangées voulez vous: '))
+for i in range(nombre + 1, 0,-1):
+    print('*'*i)
+
+
 import random
 
 
