@@ -6,7 +6,7 @@ import random
 
 def jeu():
     ndv = 20
-    print("niveau de vie" + str(ndv))
+    print("niveau de vie: " + str(ndv))
     nombre_de_victoires = 0
     nombre_de_defaites = 0
 
@@ -19,7 +19,7 @@ def jeu():
                 jeu()
             if lost == "non":
                 exit()
-
+#4 choix pour poursuivre le jeu
         print("force de l'adversaire: " + str(fadv))
         choix = input("""que voulez-vous faire?: 
         1: combattre
@@ -34,6 +34,7 @@ def jeu():
             rdd1 = random.randint(1, 6)
             print("force de l'adversaire: " + str(fadv))
             print("force de votre attaque: " + str(rdd1))
+# le joueur gagne
             if fadv < rdd1:
                 ndv += fadv
                 print("victoire! votre niveau de vie augmente de " + str(fadv))
@@ -41,7 +42,7 @@ def jeu():
                 nombre_de_victoires += 1
                 print("nombre de victoires: " + str(nombre_de_victoires))
                 print("nombres de défaites: " + str(nombre_de_defaites))
-
+# le joueur perd
             elif fadv > rdd1:
                 ndv -= fadv
                 print("défaite! vous avez perdu " + str(fadv) + " points de vie")
