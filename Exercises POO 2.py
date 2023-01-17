@@ -1,11 +1,6 @@
 #Amelia Wilson
 import random
 
-a = random.randint(1, 6)
-x = random.randint(1, 6)
-y = random.randint(1, 6)
-z = random.randint(1, 6)
-
 class NPC:
 
     def __init__(self):
