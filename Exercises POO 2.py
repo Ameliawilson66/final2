@@ -23,9 +23,12 @@ class NPC:
         self.pointsdevie = random.randint(0, 20)
         self.profession = " "
 
+        print(self)
+
     class kobold:
-
-
+        def __init__(monstre, parametre1):
+            attaquer = monstre.cible = parametre1
+            subir_dommage = monstre.dommages = random.randint(1, 6)
 def lancededes():
     if x > y:
         premier_chiffre_a_garder = x
@@ -35,3 +38,4 @@ def lancededes():
                 troisiemechiffreagarder = z
             elif a > z:
                 troisiemecvhiffreagarder = a
+
