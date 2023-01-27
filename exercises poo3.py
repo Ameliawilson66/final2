@@ -26,6 +26,7 @@ class Kobold(NPC):
         super().__init__()
     def subir_dommages(self, paramètre1):
         self.pointsdevie -= paramètre1
+        self.pointsdevie -= dommagesreg
 
         return
 
@@ -37,19 +38,18 @@ class Hero(NPC):
             paramètre1.subir_dommages(af)
         if attaque == 1:
             rien = 0
-            self.subir_dommages(rien)
+            paramètre1.subir_dommages(rien)
+
         if attaque in range (2,19):
             if self.classearmure < attaque:
                 dommagesreg = random.randint(1,6)
-                self.pointsdevie -= dommagesreg
                 paramètre1.subir_dommages(dommagesreg)
             if self.classearmure > attaque:
-                self.pointsdevie -= 0
-                paramètre1.subir_dommages(0)
-
+                rien = 0
+                paramètre1.subir_dommages(rien)
         return
-    def subir_dommages(self, paramètre2):
 
+    def subir_dommages(self, paramètre2):
 
 def lancededes():
     de1 = random.randint(1, 6)
@@ -65,4 +65,3 @@ def lancededes():
         return de1 + de2 + de4
     if de4<de1 and de4<de2 and de4<de3:
         return de1 + de2 + de3
-
