@@ -25,28 +25,28 @@ class Kobold(NPC):
     def __init__(self):
         super().__init__()
     def subir_dommages(self, paramètre1):
+        #le monstre(Kobold) subit des dommages
         self.pointsdevie -= paramètre1
-        self.pointsdevie -= dommagesreg
 
         return
 
 class Hero(NPC):
     def attaque(self, paramètre1 = Kobold):
         attaque = random.randint(1,20)
+        #attaque critique
         if attaque == 20:
             af = random.randint(1,8)
             paramètre1.subir_dommages(af)
+        #attaque ratée
         if attaque == 1:
-            rien = 0
-            paramètre1.subir_dommages(rien)
+            print("attaque ratée")
 
         if attaque in range (2,19):
             if self.classearmure < attaque:
                 dommagesreg = random.randint(1,6)
                 paramètre1.subir_dommages(dommagesreg)
             if self.classearmure > attaque:
-                rien = 0
-                paramètre1.subir_dommages(rien)
+                print("attaque ratée")
         return
 
     def subir_dommages(self, paramètre2):
